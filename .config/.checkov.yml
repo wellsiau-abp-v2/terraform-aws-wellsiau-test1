@@ -1,0 +1,21 @@
+# Default Checkov configuration for aws-ia Terraform modules
+# Modules can override by placing a custom .config/.checkov.yml in their repo
+
+download-external-modules: false
+evaluate-variables: true
+directory:
+  - ./
+framework:
+  - terraform
+skip-check:
+  - CKV2_GCP*    # Skip non-AWS: Google Cloud checks
+  - CKV_GCP*     # Skip non-AWS: Google Cloud checks
+  - CKV_AZURE*   # Skip non-AWS: Azure checks
+  - CKV2_AZURE*  # Skip non-AWS: Azure checks
+  - CKV_ALI*     # Skip non-AWS: Alibaba Cloud checks
+  - CKV_OCI*     # Skip non-AWS: Oracle Cloud checks
+  - CKV_TF_1     # Default to Terraform registry instead of Git
+summary-position: bottom
+output: cli
+compact: true
+quiet: true

@@ -1,0 +1,23 @@
+# Default terraform-docs configuration for aws-ia Terraform modules
+# Modules can override by placing a custom .config/.terraform-docs.yaml in their repo
+
+formatter: markdown
+header-from: .header.md
+settings:
+  anchor: true
+  color: true
+  default: true
+  escape: true
+  html: true
+  indent: 2
+  required: true
+  sensitive: true
+  type: true
+
+sort:
+  enabled: true
+  by: required
+
+output:
+  file: README.md
+  mode: replace

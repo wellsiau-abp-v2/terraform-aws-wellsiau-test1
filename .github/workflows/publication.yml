@@ -1,0 +1,11 @@
+name: Publication
+on:
+  push:
+    branches: [main]
+    paths: ['VERSION']
+  workflow_dispatch:
+jobs:
+  publish:
+    uses: wellsiau-abp-v2/central-repo/.github/workflows/tf-module-publication.yml@v1
+    # run-build-step: true  # Uncomment if your module has application code (e.g., Lambda)
+    secrets: inherit

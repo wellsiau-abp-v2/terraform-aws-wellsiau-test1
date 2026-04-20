@@ -1,0 +1,11 @@
+name: Static Tests
+on:
+  pull_request:
+    branches: [main]
+jobs:
+  static-tests:
+    uses: wellsiau-abp-v2/central-repo/.github/workflows/tf-module-static-tests.yml@v1
+    with:
+      terraform-version: "1.7.4"  # Update to match your module's required_version
+      # run-build-step: true  # Uncomment if your module has application code (e.g., Lambda)
+    secrets: inherit
