@@ -1,5 +1,5 @@
 # Default owner for all files
-* @wellsiau-abp-v2/wellsiau-abp-admin
+* @wellsiau-abp-v2/wellsiau-aws
 
 # Require central team approval for security-sensitive paths
 .config/ @wellsiau-abp-v2/wellsiau-abp-admin
