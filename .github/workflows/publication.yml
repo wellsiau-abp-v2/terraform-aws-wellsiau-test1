@@ -4,6 +4,8 @@ on:
     branches: [main]
     paths: ['VERSION']
   workflow_dispatch:
+permissions:
+  contents: write
 jobs:
   publish:
     uses: wellsiau-abp-v2/central-repo/.github/workflows/tf-module-publication.yml@v1

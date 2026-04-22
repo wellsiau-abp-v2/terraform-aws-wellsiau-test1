@@ -1,18 +1,22 @@
 name: Functional Tests
 on:
-  issue_comment:
-    types: [created]
+  pull_request:
+    branches: [main]
   workflow_dispatch:
+permissions:
+  contents: read
+  id-token: write
 jobs:
+  approve:
+    runs-on: ubuntu-latest
+    environment: functional-test
+    steps:
+      - name: Approved
+        run: echo "Functional tests approved by reviewer"
   functional-tests:
-    if: >
-      (github.event_name == 'issue_comment' &&
-       github.event.issue.pull_request &&
-       contains(github.event.comment.body, '/do-e2e-tests') &&
-       contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.comment.author_association)) ||
-      github.event_name == 'workflow_dispatch'
+    needs: approve
     uses: wellsiau-abp-v2/central-repo/.github/workflows/tf-module-functional-tests.yml@v1
     with:
-      terraform-version: "1.7.4"  # Update to match your module's required_version
+      terraform-version: "1.14.8"  # Update to match your module's required_version
       # run-build-step: true  # Uncomment if your module has application code (e.g., Lambda)
     secrets: inherit

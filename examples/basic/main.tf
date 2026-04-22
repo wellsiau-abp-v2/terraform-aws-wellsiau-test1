@@ -8,4 +8,5 @@ module "this" {
   source = "../.."
 
   # Add required variables here
+  unused_var = "something"
 }

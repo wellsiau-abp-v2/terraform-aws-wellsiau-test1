@@ -1,2 +1,4 @@
-# Add your module resources here.
-# See examples/basic/ for a usage example.
+resource "aws_s3_bucket" "example" {
+  bucket_prefix = var.unused_var
+}
+# Trigger 2

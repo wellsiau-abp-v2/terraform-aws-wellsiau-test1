@@ -1,8 +1,9 @@
-# terraform-aws-MODULE_NAME
+<!-- BEGIN_TF_DOCS -->
+# terraform-aws-MODULE\_NAME
 
 <!-- Update the title and description above with your module name and a brief overview -->
 
-This module deploys ... _(replace with your module description)_.
+This module deploys ... \_(replace with your module description)\_.
 
 ## Architecture
 
@@ -146,7 +147,6 @@ Edit `.config/functional_tests/post-entrypoint-helpers.sh` to clean up after tes
 rm -f tests/terraform.auto.tfvars
 ```
 
-<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
@@ -156,7 +156,9 @@ rm -f tests/terraform.auto.tfvars
 
 ## Providers
 
-No providers.
+| Name | Version |
+|------|---------|
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 5.0.0 |
 
 ## Modules
 
@@ -164,11 +166,15 @@ No modules.
 
 ## Resources
 
-No resources.
+| Name | Type |
+|------|------|
+| [aws_s3_bucket.example](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket) | resource |
 
 ## Inputs
 
-No inputs.
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_unused_var"></a> [unused\_var](#input\_unused\_var) | This is unused | `string` | n/a | yes |
 
 ## Outputs
 
